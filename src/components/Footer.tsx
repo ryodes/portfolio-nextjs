@@ -6,7 +6,7 @@ export default function Footer() {
   const year = new Date().getFullYear();
 
   return (
-    <footer className="w-full border-t border-gray-200 dark:border-gray-700 px-6 py-4 bg-white dark:bg-gray-900">
+    <footer className="w-full border-t border-gray-200 dark:border-gray-700 px-6 py-4">
       <div className="max-w-4xl mx-auto flex justify-between items-center text-sm text-gray-600 dark:text-gray-400">
         <div>© {year} Ryodes</div>
 

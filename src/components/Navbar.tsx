@@ -31,14 +31,14 @@ export default function Navbar() {
   };
 
   return (
-    <header className="w-full border-b border-gray-200 dark:border-gray-700 px-6 py-4 bg-white dark:bg-gray-900">
+    <header className="w-full border-b border-gray-200 dark:border-gray-700 px-6 py-4">
       <nav className="max-w-4xl mx-auto flex justify-between items-center">
         <div>
           <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
             travail <span className="mx-1">&gt;</span> Ingérieurs
           </div>
           <Link href="/">
-            <h2 className="text-2xl font-semibold text-gray-900 dark:text-white">
+            <h2 className="text-2xl font-semibold">
               Adel KACIMI
             </h2>
           </Link>

@@ -19,7 +19,7 @@ html {
 }
 
 body {
-  @apply bg-white text-gray-800 font-sans leading-relaxed;
+  @apply bg-[#f5f5f5] text-gray-800 font-sans leading-relaxed;
   font-family: 'Inter', sans-serif;
   min-height: 100vh;
   line-height: 1.6;
@@ -37,7 +37,7 @@ p {
 
 /* ==== Liens ==== */
 a {
-  @apply text-blue-600 hover:underline dark:text-blue-400;
+  @apply hover:underline;
 }
 
 /* ==== Boutons de base ==== */
