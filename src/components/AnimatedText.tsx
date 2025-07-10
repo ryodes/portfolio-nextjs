@@ -1,17 +1,31 @@
-// src/components/AnimatedText.tsx
 "use client";
 
-import { motion } from "framer-motion";
+import { motion, type Target } from "framer-motion";
+import { ReactNode } from "react";
 
-export function AnimatedText({ title }: { title: string }) {
+interface AnimatedTextProps {
+  children: ReactNode;
+  className?: string;
+  initial?: Target;
+  animate?: Target;
+  transition?: object;
+}
+
+export default function AnimatedText({
+  children,
+  className = "text-3xl font-bold mb-6",
+  initial = { opacity: 0, y: -30 },
+  animate = { opacity: 1, y: 0 },
+  transition = { duration: 0.6 },
+}: AnimatedTextProps) {
   return (
-    <motion.h1
-      initial={{ opacity: 0, y: -30 }}
-      animate={{ opacity: 1, y: 0 }}
-      transition={{ duration: 0.6 }}
-      className="text-3xl font-bold mb-6"
+    <motion.div
+      initial={initial}
+      animate={animate}
+      transition={transition}
+      className={className}
     >
-      {title}
-    </motion.h1>
+      {children}
+    </motion.div>
   );
 }
