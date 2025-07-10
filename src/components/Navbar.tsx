@@ -35,12 +35,10 @@ export default function Navbar() {
       <nav className="max-w-4xl mx-auto flex justify-between items-center">
         <div>
           <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-            travail <span className="mx-1">&gt;</span> Ingérieurs
+            Titre <span className="mx-1">&gt;</span> Ingérieur
           </div>
           <Link href="/">
-            <h2 className="text-2xl font-semibold">
-              Adel KACIMI
-            </h2>
+            <h2 className="text-2xl font-semibold">Adel KACIMI</h2>
           </Link>
           <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
             Ingénieur d'étude et développement
