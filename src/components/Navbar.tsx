@@ -46,22 +46,16 @@ export default function Navbar() {
         </div>
 
         <div className="flex items-center space-x-4">
-          <Link
-            href="/blog"
-            className="text-sm text-gray-600 dark:text-gray-300 hover:underline"
-          >
+          <Link href="/blog" className="text-sm hover:underline">
             Blog
           </Link>
-          <Link
-            href="/projets"
-            className="text-sm text-gray-600 dark:text-gray-300 hover:underline"
-          >
+          <Link href="/projets" className="text-sm hover:underline">
             Projets
           </Link>
           <button
             onClick={toggleTheme}
             aria-label="Switch theme"
-            className="p-1 rounded hover:bg-gray-100 dark:hover:bg-gray-800"
+            className="p-1 rounded dark:hover:bg-gray-500"
           >
             {theme === "dark" ? (
               <Sun className="w-5 h-5 text-yellow-400" />

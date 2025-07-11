@@ -1,22 +1,38 @@
+import { projets } from "@/lib/projets";
+import { notFound } from "next/navigation";
+
 interface ProjetDetailProps {
-  params: { slug: string };
+  params: {
+    slug: string;
+  };
 }
 
-export default function ProjetDetailPage({ params }: ProjetDetailProps) {
-  const { slug } = params;
+export default async function ProjetDetailPage({ params }: ProjetDetailProps) {
+  const { slug } = await params;
 
-  // En vrai, tu peux fetcher une vraie source ou importer un objet local
+  const projet = projets.find((p) => p.slug === slug);
+
+  if (!projet) {
+    return notFound();
+  }
+
   return (
     <main className="max-w-3xl mx-auto px-6 py-8">
-      <h1 className="text-3xl font-bold mb-4">Détails du projet : {slug}</h1>
-      <p className="mb-4 text-gray-700">
-        Ici tu peux ajouter une description détaillée du projet, des captures
-        d’écran, des liens, etc.
-      </p>
-
-      <p className="text-sm text-blue-600 underline cursor-pointer">
-        🔗 Lien vers le projet (externe)
-      </p>
+      <h1 className="text-3xl font-bold mb-4">{projet.nom}</h1>
+      <p className="mb-4">{projet.content}</p>
+      {/* {projet.images.map((img, idx) => (
+        <img key={idx} src={img} alt="" className="mb-4 rounded shadow" />
+      ))} */}
+      {projet.link && (
+        <a
+          href={projet.link}
+          target="_blank"
+          rel="noopener noreferrer"
+          className="text-blue-600 underline"
+        >
+          Voir le projet en ligne
+        </a>
+      )}
     </main>
   );
 }
