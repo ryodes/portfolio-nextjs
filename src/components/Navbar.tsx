@@ -53,7 +53,7 @@ export default function Navbar() {
             Blog
           </Link>
           <Link
-            href="/projects"
+            href="/projets"
             className="text-sm text-gray-600 dark:text-gray-300 hover:underline"
           >
             Projets
