@@ -55,6 +55,9 @@ export default function HomeContent() {
           les AAA), la culture japonaise sous toutes ses formes 🇯🇵, et je ne dis
           jamais non à une bonne sieste bien méritée 😴.
         </p>
+        <a href="/Adel-KACIMI-CV.pdf" download="Adel_KACIMI_CV">
+          <strong> Télécharger mon CV </strong>
+        </a>
       </AnimatedText>
     </section>
   );
