@@ -1,21 +1,23 @@
-import { projets } from "@/lib/projets";
 import Link from "next/link";
+import { getBlogPosts } from "@/lib/mdx";
 
-export default function ProjetsPage() {
+export default async function ProjetsPage() {
+  let projets = getBlogPosts();
   return (
     <main className="max-w-3xl mx-auto px-6 py-8">
-      <h1 className="text-4xl font-bold mb-8">Mes Projets</h1>
-
-      <div className="space-y-6">
-        {projets.map((projet) => (
-          <Link key={projet.slug} href={`/projets/${projet.slug}`}>
-            <div className="flex justify-between items-center pb-2 hover:opacity-80 cursor-pointer">
-              <h2 className="text-xl font-semibold">{projet.nom}</h2>
-              <p className="text-sm text-gray-600">{projet.description}</p>
-            </div>
-          </Link>
+      <h1 className="text-3xl font-bold mb-6">Projets</h1>
+      <ul className="space-y-4">
+        {projets.map((post) => (
+          <li key={post.slug} className="flex justify-between items-center">
+            <Link href={`/projets/${post.slug}`}>
+              <h2 className="text-xl font-semibold hover:underline">
+                {post.metadata.title}
+              </h2>
+            </Link>
+            <p className="text-sm text-gray-500">{post.metadata.summary}</p>
+          </li>
         ))}
-      </div>
+      </ul>
     </main>
   );
 }
