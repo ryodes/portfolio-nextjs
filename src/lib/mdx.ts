@@ -51,7 +51,7 @@ function getMDXData(dir: string) {
 }
 
 export function getBlogPosts() {
-  return getMDXData(path.join(process.cwd(), "src/content"));
+  return getMDXData(path.join(process.cwd(), "src/app/projets/content"));
 }
 
 export function formatDate(date: string, includeRelative = false) {

@@ -66,6 +66,7 @@ function Callout(props: any) {
 }
 
 function slugify(str: string) {
+  console.log(str);
   return str
     .toString()
     .toLowerCase()
