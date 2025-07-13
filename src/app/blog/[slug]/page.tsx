@@ -3,11 +3,7 @@ import { formatDate, getBlogPosts } from "@/lib/mdx";
 import { metaData } from "@/lib/config";
 import { CustomMDX } from "@/lib/utils";
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
+type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
   const posts = getBlogPosts();
@@ -17,7 +13,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: { params: Params }) {
   const { slug } = await params;
   const post = getBlogPosts().find((post) => post.slug === slug);
   if (!post) {
@@ -58,7 +54,7 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-export default async function Blog({ params }: Props) {
+export default async function Blog({ params }: { params: Params }) {
   const { slug } = await params;
   const post = getBlogPosts().find((post) => post.slug === slug);
 

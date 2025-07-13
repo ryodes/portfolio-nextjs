@@ -3,11 +3,7 @@ import { formatDate, getProjetPosts } from "@/lib/mdx";
 import { metaData } from "@/lib/config";
 import { CustomMDX } from "@/lib/utils";
 
-type Props = {
-  params: {
-    slug: string;
-  };
-};
+type Params = Promise<{ slug: string }>;
 
 export async function generateStaticParams() {
   const posts = getProjetPosts();
@@ -17,7 +13,7 @@ export async function generateStaticParams() {
   }));
 }
 
-export async function generateMetadata({ params }: Props) {
+export async function generateMetadata({ params }: { params: Params }) {
   const { slug } = await params;
   const post = getProjetPosts().find((post) => post.slug === slug);
   if (!post) {
@@ -42,7 +38,7 @@ export async function generateMetadata({ params }: Props) {
       description,
       type: "article",
       publishedTime,
-      url: `${metaData.baseUrl}/blog/${post.slug}`,
+      url: `${metaData.baseUrl}/projets/${post.slug}`,
       images: [
         {
           url: ogImage,
@@ -58,7 +54,7 @@ export async function generateMetadata({ params }: Props) {
   };
 }
 
-export default async function Blog({ params }: Props) {
+export default async function Projets({ params }: { params: Params }) {
   const { slug } = await params;
   const post = getProjetPosts().find((post) => post.slug === slug);
 
