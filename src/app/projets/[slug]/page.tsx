@@ -4,32 +4,34 @@ import { formatDate, getProjetPosts } from "@/lib/mdx";
 import { metaData } from "@/lib/config";
 import { CustomMDX } from "@/lib/utils";
 
+type Props = {
+  params: {
+    slug: string;
+  };
+};
+
 export async function generateStaticParams() {
-  let posts = getProjetPosts();
+  const posts = getProjetPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
   }));
 }
 
-export async function generateMetadata({
-  params,
-}: {
-  params: any;
-}): Promise<Metadata | undefined> {
+export async function generateMetadata({ params }: Props) {
   const { slug } = await params;
-  let post = getProjetPosts().find((post) => post.slug === slug);
+  const post = getProjetPosts().find((post) => post.slug === slug);
   if (!post) {
     return;
   }
 
-  let {
+  const {
     title,
     publishedAt: publishedTime,
     summary: description,
     image,
   } = post.metadata;
-  let ogImage = image
+  const ogImage = image
     ? image
     : `${metaData.baseUrl}/og?title=${encodeURIComponent(title)}`;
 
@@ -57,9 +59,9 @@ export async function generateMetadata({
   };
 }
 
-export default async function Blog({ params }: { params: any }) {
+export default async function Blog({ params }: Props) {
   const { slug } = await params;
-  let post = getProjetPosts().find((post) => post.slug === slug);
+  const post = getProjetPosts().find((post) => post.slug === slug);
 
   if (!post) {
     notFound();

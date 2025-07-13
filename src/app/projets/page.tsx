@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getProjetPosts } from "@/lib/mdx";
 
 export default async function ProjetsPage() {
-  let projets = getProjetPosts();
+  const projets = getProjetPosts();
   return (
     <main className="max-w-3xl mx-auto px-6 py-8">
       <h1 className="text-3xl font-bold mb-6">Mes projets:</h1>

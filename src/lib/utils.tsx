@@ -1,20 +1,21 @@
-import React from "react";
+import React, { HTMLAttributes, ReactNode } from "react";
 import Link from "next/link";
-import Image from "next/image";
+import Image, { ImageProps } from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
 import { highlight } from "sugar-high";
 import rehypeKatex from "rehype-katex";
 import remarkMath from "remark-math";
 import "katex/dist/katex.min.css";
 
-function CustomLink(props: any) {
-  let href = props.href;
+type PropsCustomLink = {
+  href: string;
+  children: React.ReactNode;
+} & React.AnchorHTMLAttributes<HTMLAnchorElement>;
+
+function CustomLink(props: PropsCustomLink) {
+  const href = props.href;
   if (href.startsWith("/")) {
-    return (
-      <Link href={href} {...props}>
-        {props.children}
-      </Link>
-    );
+    return <Link {...props}>{props.children}</Link>;
   }
   if (href.startsWith("#")) {
     return <a {...props} />;
@@ -22,26 +23,39 @@ function CustomLink(props: any) {
   return <a target="_blank" rel="noopener noreferrer" {...props} />;
 }
 
-function RoundedImage(props: any) {
-  return <Image alt={props.alt} className="rounded-lg" {...props} />;
+type PropsImageRound = {
+  alt: string;
+} & Omit<ImageProps, "alt">;
+
+function RoundedImage({ alt, ...props }: PropsImageRound) {
+  return <Image alt={alt} className="rounded-lg" {...props} />;
 }
 
-function Code({ children, ...props }: { children: any }) {
-  let codeHTML = highlight(children);
+function Code({ children, ...props }: { children: string }) {
+  const codeHTML = highlight(children);
   return <code dangerouslySetInnerHTML={{ __html: codeHTML }} {...props} />;
 }
 
-function Table({ data }: { data: any }) {
-  let headers = data.headers.map((header: any, index: any) => (
+type TableProps = {
+  data: {
+    headers: string[];
+    rows: string[][];
+  };
+};
+
+export default function Table({ data }: TableProps) {
+  const headers = data.headers.map((header, index) => (
     <th key={index}>{header}</th>
   ));
-  let rows = data.rows.map((row: any, index: any) => (
+
+  const rows = data.rows.map((row, index) => (
     <tr key={index}>
-      {row.map((cell: any, cellIndex: any) => (
+      {row.map((cell, cellIndex) => (
         <td key={cellIndex}>{cell}</td>
       ))}
     </tr>
   ));
+
   return (
     <table>
       <thead>
@@ -52,11 +66,16 @@ function Table({ data }: { data: any }) {
   );
 }
 
-function Strikethrough(props: any) {
+function Strikethrough(props: HTMLAttributes<HTMLModElement>) {
   return <del {...props} />;
 }
 
-function Callout(props: any) {
+type CalloutProps = {
+  emoji: ReactNode;
+  children: ReactNode;
+};
+
+function Callout(props: CalloutProps) {
   return (
     <div className="px-4 py-3 bg-[#F7F7F7] dark:bg-[#181818] rounded p-1 text-sm flex items-center text-neutral-900 dark:text-neutral-100 mb-8">
       <div className="flex items-center w-4 mr-4">{props.emoji}</div>
@@ -76,9 +95,9 @@ function slugify(str: string) {
     .replace(/\-\-+/g, "-");
 }
 
-function createHeading(level: Number) {
-  const Heading = ({ children }: { children: any }) => {
-    let slug = slugify(children);
+function createHeading(level: number) {
+  const Heading = ({ children }: { children: string }) => {
+    const slug = slugify(children);
     return React.createElement(
       `h${level}`,
       { id: slug },
@@ -96,7 +115,7 @@ function createHeading(level: Number) {
   return Heading;
 }
 
-let components = {
+const components = {
   h1: createHeading(1),
   h2: createHeading(2),
   h3: createHeading(3),
@@ -110,6 +129,8 @@ let components = {
   del: Strikethrough,
   Callout,
 };
+
+// type CustomMDXProps = ComponentProps<typeof MDXRemote>;
 
 export function CustomMDX(props: any) {
   return (

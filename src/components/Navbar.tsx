@@ -41,7 +41,7 @@ export default function Navbar() {
             <h2 className="text-2xl font-semibold">Adel KACIMI</h2>
           </Link>
           <div className="text-sm text-gray-500 dark:text-gray-400 mb-1">
-            Ingénieur d'étude et développement
+            Ingénieur d&apos;étude et développement
           </div>
         </div>
 

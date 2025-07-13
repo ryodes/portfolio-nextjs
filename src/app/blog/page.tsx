@@ -2,7 +2,7 @@ import Link from "next/link";
 import { getBlogPosts } from "@/lib/mdx";
 
 export default async function ProjetsPage() {
-  let projets = getBlogPosts();
+  const projets = getBlogPosts();
   return (
     <main className="max-w-3xl mx-auto px-6 py-8">
       <h1 className="text-3xl font-bold mb-6">Blog</h1>
