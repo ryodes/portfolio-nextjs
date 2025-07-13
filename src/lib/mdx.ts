@@ -51,8 +51,12 @@ function getMDXData(dir: string) {
   });
 }
 
-export function getBlogPosts() {
+export function getProjetPosts() {
   return getMDXData(path.join(process.cwd(), "src/app/projets/content"));
+}
+
+export function getBlogPosts() {
+  return getMDXData(path.join(process.cwd(), "src/app/blog/content"));
 }
 
 export function formatDate(date: string, includeRelative = false) {

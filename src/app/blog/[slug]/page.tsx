@@ -1,11 +1,11 @@
 import type { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { formatDate, getProjetPosts } from "@/lib/mdx";
+import { formatDate, getBlogPosts } from "@/lib/mdx";
 import { metaData } from "@/lib/config";
 import { CustomMDX } from "@/lib/utils";
 
 export async function generateStaticParams() {
-  let posts = getProjetPosts();
+  let posts = getBlogPosts();
 
   return posts.map((post) => ({
     slug: post.slug,
@@ -18,7 +18,7 @@ export async function generateMetadata({
   params: any;
 }): Promise<Metadata | undefined> {
   const { slug } = await params;
-  let post = getProjetPosts().find((post) => post.slug === slug);
+  let post = getBlogPosts().find((post) => post.slug === slug);
   if (!post) {
     return;
   }
@@ -59,7 +59,7 @@ export async function generateMetadata({
 
 export default async function Blog({ params }: { params: any }) {
   const { slug } = await params;
-  let post = getProjetPosts().find((post) => post.slug === slug);
+  let post = getBlogPosts().find((post) => post.slug === slug);
 
   if (!post) {
     notFound();
