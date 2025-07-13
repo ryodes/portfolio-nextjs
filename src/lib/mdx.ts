@@ -78,7 +78,7 @@ export function formatDate(date: string, includeRelative = false) {
     formattedDate = "Today";
   }
 
-  let fullDate = targetDate.toLocaleString();
+  let fullDate = targetDate.toLocaleDateString();
 
   if (!includeRelative) {
     return fullDate;
