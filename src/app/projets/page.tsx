@@ -10,11 +10,23 @@ export default async function ProjetsPage() {
         {projets.map((post) => (
           <li key={post.slug} className="flex justify-between items-center">
             <Link href={`/projets/${post.slug}`}>
-              <h2 className="text-xl font-semibold hover:underline">
+              <h2 className="text-xl font-semibold hover:underline max-w-3xs">
                 {post.metadata.title}
               </h2>
+              {post.metadata.stack && (
+                <p className="text-xs text-gray-500 mb-2">
+                  {post.metadata.stack
+                    ?.split(",")
+                    .map((item: string) => item.trim())
+                    .join(" • ")}
+                </p>
+              )}
             </Link>
-            <p className="text-sm text-gray-500">{post.metadata.summary}</p>
+            <Link href={`/projets/${post.slug}`}>
+              <p className="text-sm text-gray-500 text-end max-w-md">
+                {post.metadata.summary}
+              </p>
+            </Link>
           </li>
         ))}
       </ul>

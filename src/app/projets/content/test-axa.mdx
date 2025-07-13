@@ -1,0 +1,69 @@
+---
+title: "Test technique – AXA"
+summary: "Développement d'une application web d’aide à la tarification d’un produit d’assurance IARD pour les entreprises."
+stack: Flask, HTML, CSS, JavaScript, PDF, Word, SQLite
+publishedAt: "2024-06-01"
+---
+
+## 🎯 Objectif
+
+Ce test m’a été confié dans le cadre d’un processus de recrutement chez AXA.  
+L’objectif était de développer une **application web de tarification d’un produit d’assurance IARD Entreprises**, avec **génération automatique de propositions commerciales** aux formats **PDF** et **Word** à la fin du parcours.
+
+---
+
+## 🧱 Fonctionnalités
+
+### 🧾 Écran 1 – Liste des devis
+
+- Affichage d’une **liste de projets/devis** stockés en base de données.
+- Présentation des données dans un **tableau clair**, incluant :
+  - Numéro d’opportunité
+  - Nom du client
+  - Tarif proposé
+  - Lien direct vers le fichier PDF / Word généré
+- **Filtres dynamiques** pour faciliter la recherche.
+- Bouton **« Nouveau devis »** redirigeant vers le formulaire de création.
+
+### ✍️ Écran 2 – Création d’un devis
+
+- Saisie du **numéro d’opportunité** et du **nom du client**.
+- Remplissage dynamique d’un formulaire calqué sur une calculette Excel fournie.
+- Génération de deux documents à la validation :
+  - `Proposition_commerciale_<Num_opportunité>_<DateHeure>.pdf`
+  - `Proposition_commerciale_<Num_opportunité>_<DateHeure>.docx`
+- Documents fidèles à un **modèle commercial fourni**.
+
+---
+
+## 🛠️ Stack technique
+
+- HTML/CSS/JavaScript pour le frontend
+- Flask (Python) pour le backend
+- SQLite pour la base de données (léger et simple à installer)
+- python-docx & WeasyPrint pour la génération des fichiers Word & PDF
+
+---
+
+## 🤔 Défis rencontrés
+
+- Manipulation de fichiers Word/PDF avec **mise en forme dynamique**.
+- Reproduction fidèle du **modèle commercial AXA**.
+- **Conversion de la logique Excel** en logique métier sur le backend.
+- Réalisation dans un **temps imparti limité** et sans framework frontend.
+
+---
+
+## ✅ Résultat
+
+L'application répondait à toutes les attentes fonctionnelles.  
+Elle offrait un parcours fluide de création de devis et une **automatisation complète de la génération documentaire**.  
+Ce test m’a permis de démontrer ma capacité à **concevoir une application métier de bout en bout**, tout en respectant les contraintes UX/UI et techniques.
+
+---
+
+## Liens
+
+- 🔗 [test technique en ligne](https://ryodes.github.io/test-technique-axa-frontend//)
+- 💻 [Code source GitHub frontend](https://github.com/ryodes/test-technique-axa-frontend)
+- 💻 [Code source GitHub API](https://github.com/ryodes/test-technique-axa-api)

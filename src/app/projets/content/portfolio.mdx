@@ -1,0 +1,59 @@
+---
+title: "Portfolio personnel"
+publishedAt: "2025-07-10"
+stack: Next.js, TypeScript, MDX, Tailwind CSS, Vercel
+summary: "Création de mon portfolio avec Next.js, Tailwind et MDXRemote. Objectif : présenter mes projets efficacement tout en apprenant des technos modernes."
+---
+
+# Mon Portfolio Développeur
+
+## Pourquoi un portfolio ?
+
+En tant que développeur, avoir un portfolio clair et interactif est un vrai plus. Il permet non seulement de présenter mes projets, mais aussi de démontrer mes compétences techniques, mon sens du design et mon attention aux détails.
+
+J’ai voulu créer un espace personnel où je pourrais regrouper mes réalisations, expliquer mes choix techniques, et même publier des articles techniques ou des retours d’expérience sous forme de contenus dynamiques.
+
+---
+
+## Choix des technologies
+
+Voici les outils et frameworks que j’ai choisis :
+
+- **Next.js (App Router)** : pour profiter du rendu côté serveur (SSR), de la génération statique (SSG) et du système de routing moderne.
+- **Tailwind CSS** : pour un design rapide, propre et réactif sans écrire trop de CSS manuellement.
+- **TypeScript** : pour plus de sécurité et d’autocomplétion dans le développement.
+- **MDXRemote** : pour écrire mes pages projets au format `.mdx` tout en les rendant dynamiques.
+
+---
+
+## Intégration de MDXRemote
+
+L’un des plus gros challenges a été l’intégration de **MDXRemote** dans un projet utilisant le **App Router** de Next.js. La documentation est encore un peu floue sur certains aspects, et j’ai dû creuser plusieurs exemples open source pour comprendre la logique (comme le repo officiel de Vercel).
+
+Entre la sérialisation du contenu (`serialize`), la gestion des plugins `remark` / `rehype`, et le rendu final avec `<MDXRemote />`, c’était un vrai casse-tête au début.
+
+Mais au final, j’ai réussi à créer un composant `CustomMDX` réutilisable pour afficher chaque projet facilement via un fichier `.mdx`.
+
+---
+
+## Je n’ai pas réinventé la roue
+
+Pour gagner du temps et rester dans une logique d’apprentissage pragmatique, je suis parti d’un **template existant** que j’ai personnalisé.
+
+Cela m’a permis de rester concentré sur les aspects essentiels : la structure du contenu, l’intégration dynamique des projets, et l’organisation du code.
+
+---
+
+## Prochaines étapes
+
+- Ajouter une page “blog” ou “notes techniques”
+- Améliorer le responsive design
+- Gérer une base de données pour des projets dynamiques
+
+---
+
+## Liens
+
+- 🔗 [Portfolio en ligne (en cours)](https://ton-portoflio.netlify.app/)
+- 💻 [Code source GitHub](https://github.com/ryodes/portfolio-nextjs)
+

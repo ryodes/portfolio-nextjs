@@ -1,0 +1,57 @@
+---
+title: "Arborescence d'orientation – EANQA"
+publishedAt: "2025-07-10"
+stack: React, React Flow, Flask, Python, JSON, MongoDB
+summary: "Développement d'un outil d’arborescence visuelle pour orienter les patients vers les psychologues les plus adaptés sur la plateforme EANQA."
+---
+
+# Arborescence EANQA – Outil d'orientation patient
+
+## 🧠 Contexte du projet
+
+Chez **EANQA**, la mission est d’**offrir un parcours d’accompagnement personnalisé** aux patients, en les orientant vers le psychologue le plus adapté selon leurs besoins.
+
+Pour répondre à cet objectif, nous avons conçu un **système d’arborescence décisionnelle**, permettant à l’équipe interne de créer des parcours d’orientation dynamiques à travers un questionnaire visuel.
+
+---
+
+## 🛠️ Mes contributions techniques
+
+### 1. **Création de l'éditeur d’arborescence**
+
+- Interface réalisée avec **React** et **[React Flow](https://reactflow.dev/)** pour concevoir visuellement le parcours sous forme de graphe.
+- Permet aux psychologues internes de **créer, modifier et organiser les nœuds et transitions** du questionnaire.
+- Chaque arborescence est ensuite **convertie en un fichier JSON**, puis stockée dans une base de données via une API **Flask**.
+
+> L’objectif : permettre une **création intuitive** du parcours, même pour des utilisateurs non techniques.
+
+---
+
+### 2. **Développement du lecteur d’arborescence**
+
+- Seconde application front : **lecteur du fichier JSON généré** par l’éditeur.
+- Le patient répond aux questions en naviguant dans le graphe de décision.
+- À la fin du parcours, un algorithme de matching sélectionne les **psychologues correspondant le mieux au profil du patient**.
+
+---
+
+### 3. **Infrastructure et déploiement**
+
+- Automatisation du déploiement avec des scripts simples pour livrer rapidement les deux outils (éditeur et lecteur).
+- Déploiement sur une infrastructure interne connectée au backend **Flask**.
+
+---
+
+## 🚀 Objectif atteint
+
+Ce projet a permis :
+
+- De **centraliser la logique d’orientation** dans un outil visuel.
+- De **rendre autonomes les équipes internes** dans la création des parcours.
+- D'**accélérer l’onboarding** des patients sur la plateforme, avec une meilleure qualité d’appariement psychologue/patient.
+
+---
+
+## Remarques
+
+Ce projet étant interne à l’entreprise, je ne peux malheureusement pas fournir de lien public. Mais il représente un **exemple concret de la mise en œuvre d’un outil métier complet**, du front à l’API, avec une vraie valeur ajoutée sur le terrain.
