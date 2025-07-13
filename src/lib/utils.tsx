@@ -1,4 +1,4 @@
-import React, { HTMLAttributes, ReactNode } from "react";
+import React, { HTMLAttributes, ReactNode, ComponentProps  } from "react";
 import Link from "next/link";
 import Image, { ImageProps } from "next/image";
 import { MDXRemote } from "next-mdx-remote/rsc";
@@ -130,9 +130,9 @@ const components = {
   Callout,
 };
 
-// type CustomMDXProps = ComponentProps<typeof MDXRemote>;
+type CustomMDXProps = ComponentProps<typeof MDXRemote>;
 
-export function CustomMDX(props: any) {
+export function CustomMDX(props: CustomMDXProps) {
   return (
     <MDXRemote
       {...props}

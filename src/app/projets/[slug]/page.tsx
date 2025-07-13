@@ -1,4 +1,3 @@
-import type { Metadata } from "next";
 import { notFound } from "next/navigation";
 import { formatDate, getProjetPosts } from "@/lib/mdx";
 import { metaData } from "@/lib/config";
