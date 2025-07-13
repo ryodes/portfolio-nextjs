@@ -3,7 +3,7 @@ User-agent: *
 Allow: /
 
 # Host
-Host: https://adelkacimi.dev
+Host: https://adel-kacimi.vercel.app
 
 # Sitemaps
-Sitemap: https://adelkacimi.dev/sitemap.xml
+Sitemap: https://adel-kacimi.vercel.app/sitemap.xml

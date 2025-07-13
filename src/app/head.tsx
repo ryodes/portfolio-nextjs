@@ -3,7 +3,7 @@ export default function Head() {
     <>
       <title>Adel Kacimi | Développeur Fullstack</title>
       <link rel="icon" href="/favicon.ico" />
-      <link rel="canonical" href="https://adelkacimi.dev" />
+      <link rel="canonical" href="https://adel-kacimi.vercel.app" />
       <meta name="theme-color" content="#0f172a" />
       <meta
         name="description"
@@ -16,7 +16,7 @@ export default function Head() {
       />
       <meta property="og:image" content="/me.jpg" />
       <meta property="og:type" content="website" />
-      <meta property="og:url" content="https://adelkacimi.dev" />
+      <meta property="og:url" content="https://adel-kacimi.vercel.app" />
     </>
   );
 }
