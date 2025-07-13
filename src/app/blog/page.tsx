@@ -24,7 +24,7 @@ export default async function ProjetsPage() {
                   {post.metadata.title}
                 </h2>
               </Link>
-              <Link href={`/projets/${post.slug}`}>
+              <Link href={`/blog/${post.slug}`}>
                 <p className="text-sm text-gray-500 text-end max-w-md">
                   {post.metadata.summary}
                 </p>
