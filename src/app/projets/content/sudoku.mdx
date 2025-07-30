@@ -42,6 +42,41 @@ J’ai conçu un **jeu de Sudoku interactif** permettant :
 
 ---
 
+Le petit bout de code récursive dont je suis fière ^^
+```
+function solve() {
+    for (let i=0; i<9; i++) {
+        for (let j=0; j<9; j++) {
+            if (matr[i][j]==0) {
+                for (let n=1; n<10; n++) {
+                    if (possible(n,i,j)) {
+                        matr[i][j]=n;
+                        if (check()) {
+                            attributMat();
+                            return;
+                        }
+                        solve();
+                        matr[i][j]=0;
+                    }
+                }
+                return;
+            }
+        }
+    }
+    attributMat();
+}
+```
+---
+
+## Preview
+
+<Image
+  src="/sudoku.png"
+  alt="sudoku image"
+  width={640}
+  height={500}
+/>
+
 ## Démo et code
 
 - 🔗 [site en ligne](https://ryodes.github.io/sudoku/)
