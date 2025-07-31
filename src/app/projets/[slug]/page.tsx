@@ -72,16 +72,15 @@ export default async function Projets({ params }: { params: Params }) {
             "@context": "https://schema.org",
             "@type": "BlogPosting",
             headline: post.metadata.title,
-            datePublished: post.metadata.publishedAt,
-            dateModified: post.metadata.publishedAt,
+            datePublished: new Date(post.metadata.publishedAt).toISOString(),
+            dateModified: new Date(post.metadata.publishedAt).toISOString(),
             description: post.metadata.summary,
-            image: post.metadata.image
-              ? `${metaData.baseUrl}${post.metadata.image}`
-              : `/og?title=${encodeURIComponent(post.metadata.title)}`,
+            image: post.metadata.image,
             url: `${metaData.baseUrl}/blog/${post.slug}`,
             author: {
               "@type": "Person",
               name: metaData.name,
+              url: metaData.baseUrl,
             },
           }),
         }}

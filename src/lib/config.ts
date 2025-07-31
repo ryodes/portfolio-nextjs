@@ -1,10 +1,10 @@
 export const metaData = {
-  baseUrl: "https://nextfolio-template.vercel.app/",
+  baseUrl: "https://adel-kacimi.vercel.app/",
   title: "Portfolio",
-  name: "Ryodes",
-  ogImage: "/opengraph-image.png",
+  name: "Adel Kacimi",
+  ogImage: "/me.jpg",
   description:
-    "A clean, fast, and lightweight portfolio template built with Next.js, Vercel, and Tailwind CSS for optimal performance.",
+    "Portfolio d’Adel Kacimi, développeur fullstack passionné, spécialisé en React, Python et création d’applications web performantes.",
 };
 
 export const socialLinks = {
