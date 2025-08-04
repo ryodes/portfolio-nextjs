@@ -1,0 +1,64 @@
+---
+title: "Organiseur de fichier téléchargé"
+image: "https://adel-kacimi.vercel.app/_next/image?url=%2Fme.jpg&w=256&q=75"
+summary: "Un script Python qui trie automatiquement les fichiers du dossier Téléchargements selon leur extension, avec exécution manuelle et automatisée via le planificateur de tâches Windows."
+stack: Python, Script, Automatisation, Planificateur Windows
+publishedAt: "2025-08-04T00:00:00"
+---
+
+# Organiseur automatique de téléchargements
+
+## 🎯 Objectif
+
+L’idée m’est venue d’un problème simple mais fréquent : après plusieurs téléchargements, mon dossier `Téléchargements` devient un vrai fourre-tout. Images, documents, vidéos, archives, exécutables… tout est mélangé, ce qui rend la recherche et le tri manuels chronophages.
+
+J’ai donc développé un **script Python** qui automatise le rangement de chaque fichier téléchargé **en fonction de son extension**, en les classant dans des sous-dossiers thématiques (`Images`, `Documents`, `Vidéos`, etc.).
+
+---
+
+## 🛠️ Fonctionnement
+
+Le script utilise la librairie standard `os` et `shutil`, et peut fonctionner de deux façons :
+
+- **Mode manuel** : on l'exécute ponctuellement pour ranger tous les fichiers du dossier.
+- **Mode automatique** : il peut être lancé en arrière-plan à chaque démarrage de session grâce au **Planificateur de tâches de Windows**.
+
+J’ai aussi exploré une version "temps réel" en utilisant la librairie `watchdog`, qui surveille le dossier `Téléchargements` et trie les fichiers dès qu’ils arrivent.
+
+---
+
+## ⚙️ Technologies utilisées
+
+- 🐍 **Python 3**
+- 📁 `os`, `shutil`, `time` (librairies standard)
+- 🔁 `watchdog` pour la version en temps réel
+- 🪟 Planificateur de tâches Windows pour l'exécution automatique
+
+---
+
+## Preview
+
+<Image
+  src="/organisateur-screen-code.png"
+  alt="organisateur screen code"
+  width={640}
+  height={500}
+/>
+
+---
+
+## 📂 Exemple d’arborescence générée
+
+```txt
+Téléchargements/
+├── Images/
+│   ├── photo.png
+│   └── screenshot.jpg
+├── Documents/
+│   └── rapport.pdf
+├── Archives/
+│   └── projet.zip
+├── Installateurs/
+│   └── setup.exe
+├── Autres/
+│   └── inconnu.xyz
