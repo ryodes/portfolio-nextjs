@@ -1,0 +1,65 @@
+---
+title: "Image Resizer en HTML/JS"
+image: "https://adel-kacimi.vercel.app/_next/image?url=%2Fme.jpg&w=256&q=75"
+summary: "Une petite app web pour redimensionner ses images simplement, sans pubs ni fioritures."
+stack: HTML, CSS, JavaScript
+publishedAt: "2025-09-01T00:00:00"
+---
+
+## 🖼️ Image Resizer – Redimensionneur d’images en ligne
+
+L’idée de ce projet m’est venue d’un proche qui voulait **ajuster ses images pour son travail** mais ne savait pas comment faire.  
+Et comme je suis développeur web, il pensait que je savais *forcément tout faire avec un ordinateur* (spoiler : pas toujours 😅).  
+
+Au début, je me suis dit qu’il devait bien exister un site gratuit pour ça. Mais la réalité, c’était surtout des plateformes **bourrées de pubs**, pas intuitives, parfois même payantes.  
+Alors j’ai décidé de créer **ma propre solution** : simple, rapide, et sans distractions.
+
+---
+
+## ✨ Fonctionnalités
+
+- Upload d’une image locale.  
+- Entrée de dimensions personnalisées (en **px** ou en **cm**).  
+- Redimensionnement instantané côté navigateur (pas d’upload serveur).  
+- Téléchargement direct de l’image ajustée.  
+
+---
+
+## 🔧 Ce que j’ai mis en place
+
+- Manipulation d’images avec le **canvas HTML5**.  
+- Gestion de la conversion entre **pixels et centimètres** selon la résolution.  
+- Interface minimaliste en **HTML/CSS pur**.  
+- Un script **JavaScript vanilla** (pas de dépendances externes).  
+
+---
+
+## 🧠 Ce que j’ai appris
+
+- Les subtilités du **canvas** pour redimensionner des images.  
+- Gérer la précision entre différentes unités (px ↔ cm).  
+- Créer une app **100% client-side** qui respecte la confidentialité (aucune donnée envoyée).  
+
+---
+
+## 🧰 Stack technique
+
+- **Frontend :** HTML, CSS, JavaScript (vanilla)  
+- **Aucune base de données** ni backend nécessaire  
+
+---
+
+## Preview
+
+<Image
+  src="/resize-image.png"
+  alt="resize image screen"
+  width={640}
+  height={500}
+/>  
+
+## 🏁 Résultat
+
+Une application simple mais efficace, utile au quotidien.
+- 🔗 [reziser en ligne](https://ryodes.github.io/rezise-image/)
+- 💻 [Code source GitHub](https://github.com/ryodes/rezise-image)  
