@@ -1,0 +1,78 @@
+---
+title: "Snake Game en JavaScript"
+image: "https://adel-kacimi.vercel.app/_next/image?url=%2Fme.jpg&w=256&q=75"
+summary: "Un remake du jeu Snake, codé en JavaScript, avec des pommes dynamiques, un chrono et une vitesse qui augmente."
+stack: HTML, CSS, JavaScript
+publishedAt: "2025-09-16T00:00:00"
+---
+
+## 🐍 Snake Game – Version revisitée en JavaScript
+
+J’ai recréé le classique **Snake** en JavaScript directement dans le navigateur.
+Mais plutôt que de faire une simple copie, j’ai ajouté quelques twists :
+
+* les pommes disparaissent après un temps limité,
+* la vitesse augmente avec le score,
+* un chrono oblige à manger rapidement.
+
+---
+
+## ✨ Fonctionnalités principales
+
+* Déplacement du serpent avec les touches fléchées.
+* Chronomètre qui descend à chaque seconde.
+* Pommes **dynamiques** : elles peuvent devenir invisibles.
+* Vitesse **progressive** selon le score.
+* Gestion du **Game Over** si le serpent sort du terrain ou se mord la queue.
+
+---
+
+## 🔧 Explication du fonctionnement
+
+* **Variables globales** : gèrent le score, le chrono, l’état du serpent et des pommes.
+* **Canvas** : utilisé comme terrain de jeu, découpé en une grille de cases (20px).
+* **Serpent et pommes** : le serpent est une liste de cases ; la pomme actuelle et la suivante sont générées aléatoirement.
+* **Entrées clavier** : les déplacements sont stockés dans un *buffer* pour éviter plusieurs changements de direction sur la même frame.
+* **Boucle de jeu (`draw`)** :
+
+  * Efface et redessine le canvas à chaque frame.
+  * Met à jour la position du serpent.
+  * Vérifie la collision avec la pomme ou avec lui-même.
+  * Gère l’affichage du score, du chrono et des pommes.
+  * Ajuste la vitesse en fonction du score (plus on progresse, plus ça va vite).
+* **Chrono** : décrémente chaque seconde ; si le temps atteint zéro → fin de partie.
+* **Game Over** : déclenché si le serpent touche un mur, sa propre queue, ou si le chrono arrive à zéro.
+
+---
+
+## 🧗 Difficultés rencontrées
+
+* **Imiter le système frame par frame** des vrais jeux pour garder un rythme fluide.
+* **Limiter les déplacements** : éviter que le serpent change plusieurs fois de direction en une seule frame, géré à l'aide d'un buffer
+* **Rendre les pommes dynamiques** : visibles un temps limité puis invisibles, avec un délai qui se réduit au fur et à mesure du score.
+
+---
+
+## 🧰 Stack technique
+
+* **Frontend :** HTML, CSS, JavaScript (vanilla)
+* Aucun backend, tout tourne côté client.
+
+---
+
+## 🏁 Résultat
+
+Un mini-jeu rétro mais revisité, où la gestion du temps et la vitesse ajoutent une vraie pression de jeu.
+Un petit défi sympa, parfait pour s’entraîner en **JavaScript**.
+
+<Image
+  src="/snake-game.png"
+  alt="snake game screen"
+  width={640}
+  height={500}
+/>  
+
+- 🔗 [test technique en ligne](https://ryodes.github.io/snake-game/)
+- 💻 [Code source GitHub](https://github.com/ryodes/snake-game/tree/main)
+
+---
