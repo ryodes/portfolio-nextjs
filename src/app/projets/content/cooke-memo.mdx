@@ -1,0 +1,113 @@
+---
+title: "CookMemo – Application de gestion de recettes"
+image: "https://cookmemo.vercel.app/og-image.png"
+summary: "Une application web moderne pour créer, gérer et retrouver facilement ses recettes favorites, avec authentification sécurisée et base de données connectée."
+stack: React, Flask, Supabase, Render, JWT, Redux Toolkit, Material UI
+publishedAt: "2025-10-24T00:00:00"
+---
+
+## 🧑‍🍳 CookMemo – Mon carnet de recettes en ligne
+
+**CookMemo** est une application web que j’ai conçue pour permettre aux utilisateurs de **créer, enregistrer et consulter leurs recettes personnelles** dans une interface fluide et moderne.  
+Elle relie un **frontend React** à un **backend Flask**, avec une **base de données PostgreSQL hébergée sur Supabase**.
+
+Ce projet m’a permis de combiner plusieurs technologies full-stack dans un environnement de production complet (Vercel + Render).
+
+---
+
+## 🔍 Objectifs du projet
+
+- Créer une **application complète** avec authentification JWT et sessions persistantes.
+- Mettre en place une **API REST sécurisée** avec Flask.
+- Déployer un **frontend réactif et rapide** sur Vercel.
+- Connecter une **base de données distante** (Supabase) pour stocker recettes et utilisateurs.
+- Tester le **flux complet d’un projet SaaS** : de la conception à la mise en production.
+
+---
+
+## ⚙️ Architecture et fonctionnement
+
+### Frontend – React
+
+- **React + Redux Toolkit** pour la gestion des états globaux (recettes, utilisateur, etc.).
+- **Axios** avec interceptors pour gérer les tokens d’accès et de rafraîchissement JWT.
+- **Material UI** pour un design clair, responsive et cohérent.
+- **Notistack** pour les notifications utilisateur.
+- Hébergé sur **Vercel**, avec configuration des variables d’environnement via le dashboard.
+
+### Backend – Flask
+
+- API REST développée avec **Flask**, découpée en Blueprints (`auth`, `recipe`, `user`).
+- **Flask-JWT-Extended** pour l’authentification sécurisée via access et refresh tokens.
+- **Flask-Migrate + SQLAlchemy** pour la gestion du schéma de base de données.
+- **Flask-CORS** configuré pour permettre l’accès depuis Vercel (CORS dynamique).
+- Hébergé sur **Render**, avec variables d’environnement sécurisées.
+
+### Base de données – Supabase
+
+- Base **PostgreSQL** hébergée sur Supabase avec pooling actif (`pgbouncer` sur port 6543).
+- Connexion sécurisée avec `sslmode=require`.
+- Tables :
+  - `users` : gestion des comptes et mots de passe hashés.
+  - `recipes` : stockage des recettes (titre, description, étapes, auteur…).
+
+---
+
+## 🧠 Ce que j’ai appris
+
+- **Intégration complète frontend / backend** avec authentification et persistance.
+- Déploiement **multi-environnements (dev/prod)** avec gestion fine des variables.
+- Utilisation de **Render + Supabase** comme stack back-end performante et gratuite.
+- Mise en place d’un **système de refresh token** pour prolonger les sessions utilisateur.
+- Gestion des **erreurs API et reconnection automatique** via Axios interceptors.
+- Prise en compte de **CORS et cookies sécurisés** pour la communication cross-domain.
+
+---
+
+## ✨ Ce projet en quelques mots
+
+> Une application web pensée comme un **carnet de recettes personnel**, simple à utiliser mais techniquement solide, basée sur une architecture full-stack moderne.
+
+Ce projet m’a permis d’approfondir la **connexion entre React et Flask**, de mieux comprendre les **flux d’authentification JWT**, et de **déployer un service complet** de manière professionnelle.
+
+---
+
+## 🧰 Stack technique
+
+- **Frontend :** React, Redux Toolkit, Material UI, Axios, Notistack
+- **Backend :** Flask, Flask-JWT-Extended, Flask-Migrate, SQLAlchemy
+- **Base de données :** Supabase (PostgreSQL)
+- **Déploiement :** Vercel (frontend) + Render (backend)
+- **Authentification :** JWT Access + Refresh tokens
+- **Autres outils :** GitLab CI, dotenv, pgBouncer, CORS, Vite
+
+---
+
+## 🌐 Aperçu
+
+<video
+  src="/clip-cookmemo.mp4"
+  width="640"
+  height="480"
+  controls
+  autoPlay={false}
+/>
+
+---
+
+## 📦 Code source
+
+- 💻 [Frontend sur GitHub](https://github.com/ryodes/cookmemo)
+- ⚙️ [Backend sur GitHub](https://github.com/ryodes/cookmemo-api)
+- 🚀 [Application en ligne](https://cookmemo.vercel.app)
+
+---
+
+## 🔮 Prochaines évolutions
+
+- Ajout de la recherche par ingrédients et tags.
+- Possibilité de partager ses recettes publiquement.
+- Mode hors ligne avec IndexedDB.
+- Export / import des recettes au format JSON.
+
+---
